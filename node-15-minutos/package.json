@@ -1,0 +1,18 @@
+{
+  "name": "node-15-minutos",
+  "version": "1.0.0",
+  "description": "aprendiendo node en 15",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Pablo Ramirez",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}

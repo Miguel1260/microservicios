@@ -1,0 +1,38 @@
+[
+  {
+    "id_usuario": 1,
+    "usuario": "admin",
+    "password": "123",
+    "rol": "RH"
+  },
+  {
+    "id_usuario": 2,
+    "usuario": "miguel",
+    "password": "1234",
+    "rol": "Profesor"
+  },
+  {
+    "id_usuario": 3,
+    "usuario": "nuevo_usuario",
+    "password": "nueva_contraseña",
+    "rol": "Alumno"
+  },
+  {
+    "id_usuario": 4,
+    "usuario": "paulo",
+    "password": "1234",
+    "rol": "Alumno"
+  },
+  {
+    "id_usuario": 5,
+    "usuario": "michelle1",
+    "password": "1234",
+    "rol": "ServiciosEscolares"
+  },
+  {
+    "id_usuario": 6,
+    "usuario": "Lupelaquenoqueria",
+    "password": "123123",
+    "rol": "Alumno"
+  }
+]

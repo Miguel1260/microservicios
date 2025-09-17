@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "titulo": "Free Fire",
+    "genero": "Battle Royale",
+    "preccio": 0
+  },
+  {
+    "id": 2,
+    "titulo": "Fornite",
+    "genero": "Battle Royale",
+    "preccio": 0
+  },
+  {
+    "id": 3,
+    "titulo": "Call of Duty",
+    "genero": "Shooter",
+    "preccio": 60
+  },
+  {
+    "id": 4,
+    "titulo": "Minecraft",
+    "genero": "Sandbox",
+    "preccio": 26.95
+  },
+  {
+    "id": 5,
+    "titulo": "PugMobile",
+    "gwnero": "Battle Royale",
+    "precio": 0
+  },
+  {
+    "id": 6,
+    "titulo": "Stuble",
+    "genero": "Diversion",
+    "precio": 0
+  }
+]

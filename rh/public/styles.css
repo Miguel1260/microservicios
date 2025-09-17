@@ -1,0 +1,11 @@
+body {
+    background-color: #f8f9fa; /* Color de fondo suave */
+}
+
+h1 {
+    color: #007bff; /* Color del título */
+}
+
+.table th, .table td {
+    text-align: center;
+}

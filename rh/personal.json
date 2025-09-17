@@ -1,0 +1,23 @@
+[
+  {
+    "id_personal": 1,
+    "num_Empleado": "001",
+    "nombre": "Pablo Ramirez",
+    "rol": "RH",
+    "id_usuario": 1
+  },
+  {
+    "id_personal": 2,
+    "num_Empleado": "002",
+    "nombre": "Miguel Hernandez",
+    "rol": "Profesor",
+    "id_usuario": 2
+  },
+  {
+    "id_personal": 3,
+    "num_Empleado": "003",
+    "nombre": "Michelle Vazquez",
+    "rol": "ServiciosEscolares",
+    "id_usuario": 5
+  }
+]

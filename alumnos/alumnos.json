@@ -1,0 +1,23 @@
+[
+  {
+    "id_alumno": 1,
+    "matricula": "2023001",
+    "nombre": "Juan Pérez Actualizado",
+    "carrera": "Ingeniería en Sistemas",
+    "id_usuario": 3
+  },
+  {
+    "id_alumno": 2,
+    "matricula": "2023002",
+    "nombre": "Juan Paulo",
+    "carrera": "Ingeniería en Sistemas",
+    "id_usuario": 4
+  },
+  {
+    "id_alumno": 3,
+    "matricula": "2023003",
+    "nombre": "Lupe",
+    "carrera": "Ingeniería en Sistemas",
+    "id_usuario": 6
+  }
+]

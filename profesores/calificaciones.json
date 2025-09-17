@@ -1,0 +1,23 @@
+[
+  {
+    "id_calificacion": 1,
+    "id_alumno": 1,
+    "id_grupo": 1,
+    "calificacion": 95,
+    "materia": "Matemáticas"
+  },
+  {
+    "id_calificacion": 2,
+    "id_alumno": 1,
+    "id_grupo": 1,
+    "calificacion": 80,
+    "materia": "Español"
+  },
+    {
+    "id_calificacion": 2,
+    "id_alumno": 4,
+    "id_grupo": 1,
+    "calificacion": 80,
+    "materia": "Español"
+  }
+]

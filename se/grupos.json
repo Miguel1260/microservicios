@@ -1,0 +1,12 @@
+[
+  {
+    "id_grupo": 1,
+    "nombre": "Grupo A",
+    "carrera": "Ingeniería en Sistemas",
+    "id_personal": 2,
+    "alumnos": [
+      1,
+      2
+    ]
+  }
+]
