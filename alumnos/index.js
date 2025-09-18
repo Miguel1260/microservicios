@@ -1,20 +1,22 @@
 const express = require('express');
+const cors = require('cors')
 const fs = require('fs');
 const bodyParser = require('body-parser');
-const axios = require('axios'); // Importar axios
-
+const axios = require('axios');
 const app = express();
-const port = 3005; // Puerto para autenticación
-
 app.use(bodyParser.json());
+app.use(cors());
 app.use(express.static('public'));
+
+const port = 3005;
+
 
 const archivoAlumnos = './alumnos.json';
 
 // Función para leer alumnos desde el archivo
 const leerAlumnos = () => {
     if (!fs.existsSync(archivoAlumnos)) {
-        return []; // Retornar un arreglo vacío si el archivo no existe
+        return []; 
     }
     const data = fs.readFileSync(archivoAlumnos);
     return JSON.parse(data);
@@ -53,7 +55,7 @@ app.post('/api/registrar-alumno', async (req, res) => {
 
         // Agregar el nuevo alumno a la lista de alumnos
         alumnos.push(nuevoAlumno);
-        guardarAlumnos(alumnos); // Guardar los alumnos en alumnos.json
+        guardarAlumnos(alumnos);
 
         res.status(201).json(nuevoAlumno);
     } catch (error) {
@@ -67,7 +69,6 @@ app.put('/api/actualizar-alumno/:id_alumno', async (req, res) => {
     const { id_alumno } = req.params;
     const { matricula, nombre, carrera, usuario, password } = req.body;
 
-    // Leer archivo de alumnos
     let alumnos = leerAlumnos();
     const alumnoIndex = alumnos.findIndex(a => a.id_alumno == id_alumno);
 
@@ -75,7 +76,6 @@ app.put('/api/actualizar-alumno/:id_alumno', async (req, res) => {
         return res.status(404).json({ mensaje: 'Alumno no encontrado' });
     }
 
-    // Actualizar la información del alumno
     if (matricula) alumnos[alumnoIndex].matricula = matricula;
     if (nombre) alumnos[alumnoIndex].nombre = nombre;
     if (carrera) alumnos[alumnoIndex].carrera = carrera;
@@ -92,7 +92,7 @@ app.put('/api/actualizar-alumno/:id_alumno', async (req, res) => {
         }
     }
 
-    guardarAlumnos(alumnos); // Guardar los alumnos actualizados
+    guardarAlumnos(alumnos);
 
     res.status(200).json(alumnos[alumnoIndex]);
 });

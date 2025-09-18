@@ -19,5 +19,75 @@
     "nombre": "Michelle Vazquez",
     "rol": "ServiciosEscolares",
     "id_usuario": 5
+  },
+  {
+    "id_personal": 4,
+    "num_Empleado": "009",
+    "nombre": "Brayan Miguel Angel",
+    "rol": "Profesor",
+    "id_usuario": 7
+  },
+  {
+    "id_personal": 5,
+    "num_Empleado": "007",
+    "nombre": "Juan Pablo",
+    "rol": "Profesor",
+    "id_usuario": 8
+  },
+  {
+    "id_personal": 6,
+    "num_Empleado": "010",
+    "nombre": "Yaneth",
+    "rol": "Recursos Humanos",
+    "id_usuario": 9
+  },
+  {
+    "id_personal": 7,
+    "num_Empleado": "011",
+    "nombre": "Osvaldo Muñoz Olivares",
+    "rol": "Profesor",
+    "id_usuario": 10
+  },
+  {
+    "id_personal": 8,
+    "num_Empleado": "012",
+    "nombre": "Pablo Ramírez Navarro",
+    "rol": "Servicios Escolares",
+    "id_usuario": 11
+  },
+  {
+    "id_personal": 9,
+    "num_Empleado": "013",
+    "nombre": "Juan Carlos López Ruiz",
+    "rol": "Recursos Humanos",
+    "id_usuario": 12
+  },
+  {
+    "id_personal": 10,
+    "num_Empleado": "014",
+    "nombre": "Marina González Gutierrez",
+    "rol": "Recursos Humanos",
+    "id_usuario": 13
+  },
+  {
+    "id_personal": 11,
+    "num_Empleado": "015",
+    "nombre": "Julio Vazquez Gutierrez",
+    "rol": "RH",
+    "id_usuario": 14
+  },
+  {
+    "id_personal": 12,
+    "num_Empleado": "1000",
+    "nombre": "eduardo",
+    "rol": "Servicios Escolares",
+    "id_usuario": 17
+  },
+  {
+    "id_personal": 13,
+    "num_Empleado": "1000",
+    "nombre": "Lalo",
+    "rol": "ServiciosEscolares",
+    "id_usuario": 19
   }
 ]

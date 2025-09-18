@@ -15,7 +15,6 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
         const data = await response.json();
         const userId = data.id_usuario;   // Redirigir según el rol
 
-        // Mostrar mensaje de éxito
         Swal.fire({
             title: "¡Éxito!",
             text: "Inicio de sesión exitoso.",
@@ -39,7 +38,7 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
             }
         });
     } else {
-        const errorData = await response.json(); // Obtener mensaje de error, si está disponible
+        const errorData = await response.json(); 
         Swal.fire({
             title: "¡Error!",
             text: errorData.mensaje || "Credenciales Incorrectas.",

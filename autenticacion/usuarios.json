@@ -14,13 +14,13 @@
   {
     "id_usuario": 3,
     "usuario": "nuevo_usuario",
-    "password": "nueva_contraseña",
+    "password": "555555",
     "rol": "Alumno"
   },
   {
     "id_usuario": 4,
     "usuario": "paulo",
-    "password": "1234",
+    "password": "4321",
     "rol": "Alumno"
   },
   {
@@ -34,5 +34,83 @@
     "usuario": "Lupelaquenoqueria",
     "password": "123123",
     "rol": "Alumno"
+  },
+  {
+    "id_usuario": 7,
+    "usuario": "brayan",
+    "password": "123",
+    "rol": "Profesor"
+  },
+  {
+    "id_usuario": 8,
+    "usuario": "pablo",
+    "password": "1234",
+    "rol": "Profesor"
+  },
+  {
+    "id_usuario": 9,
+    "usuario": "yane",
+    "password": "123",
+    "rol": "RH"
+  },
+  {
+    "id_usuario": 10,
+    "usuario": "osvaldo",
+    "password": "123",
+    "rol": "Profesor"
+  },
+  {
+    "id_usuario": 11,
+    "usuario": "pablo",
+    "password": "123",
+    "rol": "Servicios Escolares"
+  },
+  {
+    "id_usuario": 12,
+    "usuario": "carlos",
+    "password": "123",
+    "rol": "RH"
+  },
+  {
+    "id_usuario": 13,
+    "usuario": "marina",
+    "password": "123",
+    "rol": "RH"
+  },
+  {
+    "id_usuario": 14,
+    "usuario": "julio",
+    "password": "123",
+    "rol": "RH"
+  },
+  {
+    "id_usuario": 15,
+    "usuario": "jesus",
+    "password": "123",
+    "rol": "Alumno"
+  },
+  {
+    "id_usuario": 16,
+    "usuario": "ytang",
+    "password": "12345",
+    "rol": "Alumno"
+  },
+  {
+    "id_usuario": 17,
+    "usuario": "eduardoservicios",
+    "password": "123",
+    "rol": "ServiciosEscolares"
+  },
+  {
+    "id_usuario": 18,
+    "usuario": "eduardoalumno",
+    "password": "123",
+    "rol": "Alumno"
+  },
+  {
+    "id_usuario": 19,
+    "usuario": "lalo",
+    "password": "123",
+    "rol": "ServiciosEscolares"
   }
 ]

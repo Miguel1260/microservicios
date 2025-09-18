@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Panel del Profesor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+    <div class="container mt-4">
+        <button id="btnCerrarSesion" class="btn btn-danger">Cerrar sesión</button>
+        <h2 class="text-center mb-4">Bienvenido Profesor</h2>
+
+        <ul class="nav nav-tabs mb-3" id="pestañas" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="datos-tab" data-bs-toggle="tab" data-bs-target="#datos"
+                    type="button" role="tab" aria-controls="datos" aria-selected="true">Datos del Profesor</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="grupos-tab" data-bs-toggle="tab" data-bs-target="#grupos" type="button"
+                    role="tab" aria-controls="grupos" aria-selected="false">Grupos Asignados</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="calificaciones-tab" data-bs-toggle="tab" data-bs-target="#calificaciones"
+                    type="button" role="tab" aria-controls="calificaciones" aria-selected="false">Registrar
+                    Calificaciones</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="contrasena-tab" data-bs-toggle="tab" data-bs-target="#contrasena"
+                    type="button" role="tab" aria-controls="contrasena" aria-selected="false">Cambiar
+                    Contraseña</button>
+            </li>
+        </ul>
+
+        <div class="tab-content">
+            <!-- Datos del Profesor -->
+            <div class="tab-pane fade show active" id="datos" role="tabpanel" aria-labelledby="datos-tab">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header bg-primary text-white">
+                        Datos Personales
+                    </div>
+                    <div class="card-body">
+                        <p><strong>Número de empleado:</strong> <span id="num_Empleado"></span></p>
+                        <p><strong>Nombre:</strong> <span id="nombre"></span></p>
+                        <p><strong>Puesto:</strong> <span id="rol"></span></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grupos Asignados -->
+            <div class="tab-pane fade" id="grupos" role="tabpanel" aria-labelledby="grupos-tab">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header bg-success text-white">
+                        Grupos Asignados
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Grupo</th>
+                                    <th>Nombre</th>
+                                    <th>Carrera</th>
+                                    <th>Alumnos</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tablaGrupos"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Registrar Calificaciones -->
+            <div class="tab-pane fade" id="calificaciones" role="tabpanel" aria-labelledby="calificaciones-tab">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header bg-warning text-dark">
+                        Registrar Calificación
+                    </div>
+                    <div class="card-body">
+                        <form id="formCalificacion">
+                            <div class="mb-3">
+                                <label for="id_grupo" class="form-label">Grupo</label>
+                                <select class="form-control" id="id_grupo" required>
+                                    <option value="" disabled selected>Selecciona un grupo</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="idAlumno" class="form-label">Alumno</label>
+                                <select class="form-control" id="idAlumno" required>
+                                    <option value="" disabled selected>Selecciona un alumno</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="materia" class="form-label">Materia</label>
+                                <select class="form-control" id="materia" required>
+                                    <option value="" disabled selected>Selecciona una materia</option>
+                                    <option value="Matemáticas">Matemáticas</option>
+                                    <option value="Español">Español</option>
+                                    <option value="Programación">Programación</option>
+                                    <option value="Base de Datos">Base de Datos</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="calificacion" class="form-label">Calificación</label>
+                                <input type="number" class="form-control" id="calificacion" min="0" max="100" required>
+                            </div>
+                            <button type="submit" class="btn btn-warning">Guardar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Cambiar Contraseña -->
+            <div class="tab-pane fade" id="contrasena" role="tabpanel" aria-labelledby="contrasena-tab">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header bg-danger text-white">
+                        Cambiar Contraseña
+                    </div>
+                    <div class="card-body">
+                        <form id="formCambioContrasena">
+                            <div class="mb-3">
+                                <label for="nuevaContrasena" class="form-label">Nueva Contraseña</label>
+                                <input type="password" class="form-control" id="nuevaContrasena" required>
+                            </div>
+                            <button type="submit" class="btn btn-danger">Actualizar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="profesor.js"></script>
+</body>
+
+</html>

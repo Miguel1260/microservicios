@@ -2,14 +2,14 @@ const express = require('express');
 const cors = require('cors')
 const fs = require('fs');
 const bodyParser = require('body-parser');
-const axios = require('axios'); // Importar axios
-
+const axios = require('axios');
 const app = express();
-const port = 3001;
-
-app.use(cors());
 app.use(bodyParser.json());
+app.use(cors());
 app.use(express.static('public'));
+
+
+const port = 3001;
 
 
 // Leer usuarios desde el archivo
@@ -68,10 +68,10 @@ app.put('/api/cambiar-contrasena', (req, res) => {
         return res.status(404).json({ mensaje: 'Usuario no encontrado' });
     }
 
-    // Cambiar la contraseña
+
     usuario.password = nueva_contrasena;
 
-    // Guardar los cambios en el archivo
+
     guardarUsuarios(usuarios);
     res.status(200).json({ mensaje: 'Contraseña actualizada con éxito' });
 });
@@ -83,7 +83,7 @@ app.put('/api/usuarios/:id_usuario', async (req, res) => {
     const { usuario, password } = req.body;
 
     try {
-        let usuarios = leerUsuarios(); // Función para leer usuarios
+        let usuarios = leerUsuarios(); 
         const userIndex = usuarios.findIndex(u => u.id_usuario == id_usuario);
 
         if (userIndex === -1) {
@@ -94,12 +94,26 @@ app.put('/api/usuarios/:id_usuario', async (req, res) => {
         if (usuario) usuarios[userIndex].usuario = usuario;
         if (password) usuarios[userIndex].password = password;
 
-        guardarUsuarios(usuarios); // Función para guardar usuarios actualizados
+        guardarUsuarios(usuarios); 
 
         res.status(200).json({ mensaje: 'Usuario actualizado exitosamente' });
     } catch (error) {
         res.status(500).json({ mensaje: 'Error al actualizar el usuario', error: error.message });
     }
+});
+
+// Ruta para obtener información de usuario por ID
+app.get('/api/usuarios-id/:id_usuario', (req, res) => {
+    const { id_usuario } = req.params;
+    let usuarios = leerUsuarios();
+    
+    const usuario = usuarios.find(u => u.id_usuario == id_usuario);
+    
+    if (!usuario) {
+        return res.status(404).json({ mensaje: 'Usuario no encontrado' });
+    }
+    
+    res.status(200).json(usuario);
 });
 
 // Iniciar el servidor

@@ -1,17 +1,15 @@
-
 const express = require('express');
 const cors = require('cors')
 const fs = require('fs');
 const bodyParser = require('body-parser');
-const axios = require('axios'); // Importar axios
-
+const axios = require('axios');
 const app = express();
-const port = 3002;
-
-app.use(cors());
 app.use(bodyParser.json());
+app.use(cors());
 app.use(express.static('public'));
 
+
+const port = 3002;
 
 // Ruta del archivo de personal
 const archivoPersonal = './personal.json';
@@ -43,7 +41,7 @@ app.post('/api/alta-personal', async (req, res) => {
     };
 
     try {
-        // Realizar solicitud a la API de autenticación para crear un nuevo usuario
+
         const response = await axios.post('http://localhost:3001/api/guardar-usuarios', {
             usuario: usuario,
             password: password,
@@ -53,9 +51,8 @@ app.post('/api/alta-personal', async (req, res) => {
         // Asignar el ID del usuario creado al nuevo personal
         nuevoPersonal.id_usuario = response.data.id_usuario;
 
-        // Agregar el nuevo personal a la lista de personal
         personal.push(nuevoPersonal);
-        guardarPersonal(personal); // Guardar el personal en personal.json
+        guardarPersonal(personal);
 
         res.status(201).json(nuevoPersonal);
     } catch (error) {

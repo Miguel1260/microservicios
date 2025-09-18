@@ -19,5 +19,26 @@
     "nombre": "Lupe",
     "carrera": "Ingeniería en Sistemas",
     "id_usuario": 6
+  },
+  {
+    "id_alumno": 4,
+    "matricula": "2023006",
+    "nombre": "José de Jesús López Sánchez",
+    "carrera": "Ingeniería en Sistemas",
+    "id_usuario": 15
+  },
+  {
+    "id_alumno": 5,
+    "matricula": "2023005",
+    "nombre": "Ytang Emmanuel López",
+    "carrera": "Ingeniería en Sistemas",
+    "id_usuario": 16
+  },
+  {
+    "id_alumno": 6,
+    "matricula": "10001000",
+    "nombre": "eduardoa",
+    "carrera": "tics",
+    "id_usuario": 18
   }
 ]

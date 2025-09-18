@@ -1,9 +1,5 @@
-function getQueryParam(param) {
-    const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get(param);
-}
-const id_usuario = getQueryParam('id');
-console.log('ID del usuario:', id_usuario);
+const urlParams = new URLSearchParams(window.location.search);
+const idUsuario = urlParams.get("id");
 
 let alumnoActual = null;
 
@@ -12,7 +8,7 @@ async function cargarAlumno() {
     const response = await fetch("http://localhost:3005/api/ver-alumnos");
     const alumnos = await response.json();
 
-    alumnoActual = alumnos.find(a => a.id_usuario == id_usuario);
+    alumnoActual = alumnos.find(a => a.id_usuario == idUsuario);
 
     if (!alumnoActual) {
         alert("Alumno no encontrado");
@@ -70,7 +66,7 @@ async function cargarGrupos() {
 
 // Función para cargar calificaciones
 async function cargarCalificaciones() {
-    const response = await fetch(`http://localhost:3005/api/ver-calificaciones/${id_usuario}`);
+    const response = await fetch(`http://localhost:3005/api/ver-calificaciones/${alumnoActual.id_alumno}`);
     if (!response.ok) {
         document.getElementById("tablaCalificaciones").innerHTML = `<tr><td colspan="4">No hay calificaciones registradas.</td></tr>`;
         return;
@@ -102,12 +98,12 @@ document.getElementById("formCambioContrasena").addEventListener("submit", async
         const response = await fetch("http://localhost:3001/api/cambiar-contrasena", {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ id_usuario: parseInt(id_usuario),nueva_contrasena: nuevaContrasena
+            body: JSON.stringify({ id_usuario: parseInt(idUsuario),nueva_contrasena: nuevaContrasena
             })
         });
 
         if (response.ok) {
-            swal({
+            Swal.fire({
                 title: "¡Éxito!",
                 text: "Contraseña actualizada con éxito",
                 icon: "success",
@@ -116,7 +112,7 @@ document.getElementById("formCambioContrasena").addEventListener("submit", async
             document.getElementById("formCambioContrasena").reset();
         } else {
             const data = await response.json();
-            swal({
+            Swal.fire({
                 title: "¡Error!",
                 text: "Error al cambiar la contraseña: " + (data.mensaje || "Error desconocido"),
                 icon: "error",
@@ -124,7 +120,7 @@ document.getElementById("formCambioContrasena").addEventListener("submit", async
             });
         }
     } catch (error) {
-        swal({
+        Swal.fire({
             title: "¡Error!",
             text: "Error al conectar con el servidor: " + error.message,
             icon: "error",
@@ -135,10 +131,8 @@ document.getElementById("formCambioContrasena").addEventListener("submit", async
 
 // Cerrar sesión
 document.getElementById("btnCerrarSesion").addEventListener("click", () => {
-    // Limpiar almacenamiento local/session (si guardas datos de sesión)
-    localStorage.clear(); // o sessionStorage.clear();
+    localStorage.clear(); 
 
-    // Redirigir al login
     window.location.href = "http://localhost:3001/login.html";
 });
 

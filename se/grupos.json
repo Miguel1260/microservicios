@@ -8,5 +8,46 @@
       1,
       2
     ]
+  },
+  {
+    "id_grupo": 2,
+    "nombre": "Grupo B",
+    "carrera": "Ingeniería en Sistemas",
+    "id_personal": 2,
+    "alumnos": [
+      1,
+      3
+    ]
+  },
+  {
+    "id_grupo": 3,
+    "nombre": "Grupo C",
+    "carrera": "I",
+    "id_personal": 2,
+    "alumnos": [
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "id_grupo": 4,
+    "nombre": "Grupo D",
+    "carrera": "Industria Automotriz",
+    "id_personal": 5,
+    "alumnos": [
+      5
+    ]
+  },
+  {
+    "id_grupo": 5,
+    "nombre": "noidgs702",
+    "carrera": "tic",
+    "id_personal": 5,
+    "alumnos": [
+      4,
+      5,
+      6
+    ]
   }
 ]

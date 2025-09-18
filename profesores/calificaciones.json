@@ -13,11 +13,116 @@
     "calificacion": 80,
     "materia": "Español"
   },
-    {
-    "id_calificacion": 2,
-    "id_alumno": 4,
+  {
+    "id_calificacion": 3,
+    "id_alumno": 1,
     "id_grupo": 1,
-    "calificacion": 80,
+    "calificacion": 70,
+    "materia": "Diseño Web"
+  },
+  {
+    "id_calificacion": 4,
+    "id_alumno": 1,
+    "id_grupo": 2,
+    "calificacion": 85,
+    "materia": "Base de datos"
+  },
+  {
+    "id_calificacion": 5,
+    "id_alumno": 1,
+    "id_grupo": 1,
+    "calificacion": 90,
+    "materia": "Historia"
+  },
+  {
+    "id_calificacion": 6,
+    "id_alumno": 2,
+    "id_grupo": 2,
+    "calificacion": 85,
+    "materia": "Historia"
+  },
+  {
+    "id_calificacion": 7,
+    "id_alumno": 3,
+    "id_grupo": 1,
+    "calificacion": 100,
+    "materia": "Historia"
+  },
+  {
+    "id_calificacion": 8,
+    "id_alumno": 1,
+    "id_grupo": 1,
+    "calificacion": 95,
+    "materia": "Ciencias"
+  },
+  {
+    "id_calificacion": 9,
+    "id_alumno": 1,
+    "id_grupo": 2,
+    "calificacion": 45,
+    "materia": "Base de Datos"
+  },
+  {
+    "id_calificacion": 10,
+    "id_alumno": 3,
+    "id_grupo": 1,
+    "calificacion": 2,
     "materia": "Español"
+  },
+  {
+    "id_calificacion": 11,
+    "id_alumno": 3,
+    "id_grupo": 1,
+    "calificacion": 3,
+    "materia": "Programación"
+  },
+  {
+    "id_calificacion": 12,
+    "id_alumno": 1,
+    "id_grupo": 3,
+    "calificacion": 10,
+    "materia": "Español"
+  },
+  {
+    "id_calificacion": 13,
+    "id_alumno": 0,
+    "id_grupo": 1,
+    "calificacion": 10,
+    "materia": "Base de Datos"
+  },
+  {
+    "id_calificacion": 14,
+    "id_alumno": 3,
+    "id_grupo": 2,
+    "calificacion": 10,
+    "materia": "Base de Datos"
+  },
+  {
+    "id_calificacion": 15,
+    "id_alumno": 5,
+    "id_grupo": 4,
+    "calificacion": 10,
+    "materia": "Matemáticas"
+  },
+  {
+    "id_calificacion": 16,
+    "id_alumno": 5,
+    "id_grupo": 4,
+    "calificacion": 7,
+    "materia": "Programación"
+  },
+  {
+    "id_calificacion": 17,
+    "id_alumno": 6,
+    "id_grupo": 5,
+    "calificacion": 10,
+    "materia": "Matemáticas"
+  },
+  {
+    "id_calificacion": 18,
+    "id_alumno": 6,
+    "id_grupo": 5,
+    "calificacion": 9,
+    "materia": "Base de Datos"
   }
 ]

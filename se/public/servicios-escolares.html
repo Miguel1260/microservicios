@@ -1,11 +1,174 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Servicios Escolares</title>
+  <meta charset="UTF-8">
+  <title>Panel de Servicios Escolares</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-    <h1>Bienvenido, Servicios Escolares</h1>
-    <p>Esta es la página de Servicios Escolares.</p>
+
+<body class="bg-light">
+
+  <div class="container mt-4">
+    <button id="logoutButton" class="btn btn-danger my-4">Cerrar Sesión</button>
+    <h2 class="text-center mb-4">Panel de Servicios Escolares</h2>
+
+    <ul class="nav nav-tabs mb-3">
+      <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#datos">Datos</button>
+      </li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#gestionar-alumnos">Gestión de
+          Alumnos</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#crear-grupo">Crear
+          Grupo</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#ver-grupos">Ver
+          Grupos</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#contrasena">Cambiar
+          Contraseña</button></li>
+    </ul>
+
+    <div class="tab-content">
+
+      <!-- Datos -->
+      <div class="tab-pane fade show active" id="datos">
+        <div class="card shadow-sm">
+          <div class="card-header bg-primary text-white">Datos de Usuario</div>
+          <div class="card-body">
+            <p><strong>Número de Empleado:</strong> <span id="numero_Empelado"></span></p>
+            <p><strong>Nombre:</strong> <span id="nombre"></span></p>
+            <p><strong>Puesto:</strong> <span id="rol"></span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gestión de Alumnos -->
+      <div class="tab-pane fade" id="gestionar-alumnos">
+        <!-- En la sección de Gestión de Alumnos, modifica el formulario -->
+        <div class="card-body">
+          <!-- Tabla de alumnos -->
+          <!-- En la tabla de alumnos, agrega una columna para usuario -->
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>N°</th>
+                <th>Matrícula</th>
+                <th>Nombre</th>
+                <th>Carrera</th>
+                <th>Usuario</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="tablaAlumnos"></tbody>
+          </table>
+
+          <!-- Formulario agregar/editar -->
+          <h5 id="tituloFormulario">Agregar Nuevo Alumno</h5>
+          <form id="formAlumno">
+            <input type="hidden" id="idAlumno">
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <input type="text" id="matriculaAlumno" class="form-control" placeholder="Matrícula" required>
+              </div>
+              <div class="col-md-6 mb-3">
+                <input type="text" id="nombreAlumno" class="form-control" placeholder="Nombre completo" required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <input type="text" id="carreraAlumno" class="form-control" placeholder="Carrera" required>
+              </div>
+              <div class="col-md-6 mb-3">
+                <input type="text" id="usuarioAlumno" class="form-control" placeholder="Usuario" required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <input type="password" id="contrasenaAlumno" class="form-control" placeholder="Contraseña" required>
+              </div>
+              <div class="col-md-6 mb-3 d-flex align-items-end">
+                <button class="btn btn-success me-2" type="submit">Guardar</button>
+                <button type="button" class="btn btn-secondary" onclick="limpiarFormulario()">Cancelar</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Crear Grupo -->
+      <div class="tab-pane fade" id="crear-grupo">
+        <div class="card shadow-sm">
+          <div class="card-header bg-info text-white">Crear Grupo</div>
+          <div class="card-body">
+            <form id="formCrearGrupo">
+              <div class="mb-3">
+                <input type="text" id="nombreGrupo" class="form-control" placeholder="Nombre del grupo" required>
+              </div>
+              <div class="mb-3">
+                <input type="text" id="carrera" class="form-control" placeholder="Carrera" required>
+              </div>
+
+              <!-- Selector de profesores -->
+              <div class="mb-3">
+                <label for="profesorSelect" class="form-label">Profesor</label>
+                <select id="profesorSelect" class="form-select" required>
+                  <option value="">Seleccione un profesor</option>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label for="alumnosSelect" class="form-label">Alumnos</label>
+                <select id="alumnosSelect" class="form-select" multiple required>
+                  <option value="">Cargando alumnos...</option>
+                </select>
+              </div>
+
+              <button class="btn btn-info" type="submit">Crear</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Ver Grupos -->
+      <div class="tab-pane fade" id="ver-grupos">
+        <div class="card shadow-sm">
+          <div class="card-header bg-secondary text-white">Grupos Registrados</div>
+          <div class="card-body">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>N°</th>
+                  <th>Grupo</th>
+                  <th>Carrera</th>
+                  <th>Profesor</th>
+                  <th>Alumnos</th>
+                </tr>
+              </thead>
+              <tbody id="tablaGrupos"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cambiar Contraseña -->
+      <div class="tab-pane fade" id="contrasena">
+        <div class="card shadow-sm">
+          <div class="card-header bg-danger text-white">Cambiar Contraseña</div>
+          <div class="card-body">
+            <form id="formCambioContrasena">
+              <div class="mb-3"><input type="password" id="nuevaContrasena" class="form-control"
+                  placeholder="Nueva Contraseña" required></div>
+              <button class="btn btn-danger" type="submit">Actualizar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="se.js"></script>
 </body>
+
 </html>
